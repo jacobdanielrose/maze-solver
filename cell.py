@@ -1,8 +1,8 @@
-from graphics import Line, Point
+from graphics import Line, Point, Window
 from typing_extensions import Union
 
 class Cell():
-    def __init__(self, win) -> None:
+    def __init__(self, win=None) -> None:
         self.has_left_wall = True
         self.has_right_wall = True
         self.has_top_wall = True
@@ -39,6 +39,8 @@ class Cell():
         to_center_x = (to_cell.__x2 + to_cell.__x1) / 2
         to_center_y = (to_cell.__y2 + to_cell.__y1) / 2
         line = Line(Point(self_center_x, self_center_y), Point(to_center_x, to_center_y))
+        if self.__win is None:
+            return
         if not undo:
             self.__win.draw_line(line,fill_color="red")
         else:

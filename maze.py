@@ -12,8 +12,10 @@ class Maze():
             num_cols: int,
             cell_size_x: Union[int, float],
             cell_size_y: Union[int, float],
-            win: Window,
+            win = None,
         ) -> None:
+        if num_rows < 1 or num_cols < 1:
+            raise ValueError("Number of columns and rows must be non-zero")
         self.__x1 = x1
         self.__y1 = y1
         self.__num_rows = num_rows
@@ -46,3 +48,5 @@ class Maze():
             return
         self.__win.redraw()
         sleep(0.0005)
+        
+    
