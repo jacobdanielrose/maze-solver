@@ -12,6 +12,7 @@ class Cell():
         self.__y1 = -1
         self.__y2 = -1
         self.__win = win
+        self.visited = False
 
     def draw(self, x1: Union[float, int], y1: Union[float, int], x2: Union[float, int], y2: Union[float, int]) -> None:
         if self.__win is None:
