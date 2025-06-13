@@ -1,7 +1,8 @@
 from graphics import Line, Point
+from typing_extensions import Union
 
 class Cell():
-    def __init__(self, win):
+    def __init__(self, win) -> None:
         self.has_left_wall = True
         self.has_right_wall = True
         self.has_top_wall = True
@@ -12,7 +13,7 @@ class Cell():
         self.__y2 = -1
         self.__win = win
 
-    def draw(self, x1, y1, x2, y2):
+    def draw(self, x1: Union[float, int], y1: Union[float, int], x2: Union[float, int], y2: Union[float, int]) -> None:
         if self.__win is None:
             return
         self.__x1 = x1
@@ -32,7 +33,7 @@ class Cell():
             line = Line(Point(x1,y2), Point(x2,y2))
             self.__win.draw_line(line)
 
-    def draw_move(self, to_cell, undo=False):
+    def draw_move(self, to_cell, undo=False) -> None:
         self_center_x = (self.__x2 + self.__x1) / 2
         self_center_y = (self.__y2 + self.__y1) / 2
         to_center_x = (to_cell.__x2 + to_cell.__x1) / 2
