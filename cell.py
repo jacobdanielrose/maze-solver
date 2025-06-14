@@ -1,4 +1,4 @@
-from graphics import Line, Point, Window
+from graphics import Line, Point
 from typing_extensions import Union
 
 class Cell():
