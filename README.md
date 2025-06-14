@@ -6,7 +6,7 @@
 
 ## 🚀 Overview
 
-This repository contains a **maze solver** developed as part of the [Boot.dev](https://boot.dev) backend developer course. The project is designed to help students develop core programming skills, including algorithmic thinking, data structures, and Python application development.
+This repository contains a **maze solver**. The project is designed to help students develop core programming skills, including algorithmic thinking, data structures, and Python application development.
 
 > 🚧 This project was developed as part of the [Boot.dev](https://boot.dev) Backend Developer curriculum.
 > It serves as an introductory project to practice implementing algorithms in a practical application.
