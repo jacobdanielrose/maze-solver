@@ -1,6 +1,5 @@
 from cell import Cell
 from time import sleep
-from graphics import Window
 from typing_extensions import Union
 import random
 
@@ -29,6 +28,7 @@ class Maze():
         self.__create_cells()
         self.__break_entrance_and_exit()
         self.__break_walls_r(0,0)
+        self.__reset_cells_visited()
 
         if seed is not None:
             random.seed(seed)
@@ -99,3 +99,8 @@ class Maze():
                 self.__cells[next_i][next_j].has_bottom_wall = False
 
             self.__break_walls_r(next_i,next_j)
+
+    def __reset_cells_visited(self) -> None:
+        for i in range(self.__num_cols):
+            for j in range(self.__num_rows):
+                self.__cells[i][j].visited = False
